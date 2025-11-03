@@ -3,7 +3,6 @@ agent any
 options { timestamps() }
 stages {
 stage('Cloner le dépôt') {
-Audience: 3 Année LIG Année universitaire : 2025-2026
 steps {
 git url: 'https://github.com/ouniouni123/tp2-jenkins', branch: 'main'
 }
