@@ -5,7 +5,7 @@ environment {
 IMAGE = 'ouniouni/monapp'
 TAG = "build-${env.BUILD_NUMBER}"
 }
-  stages {
+stages {
 stage('Checkout') {
 steps { checkout scm } // lit le même repo que le job
 }
