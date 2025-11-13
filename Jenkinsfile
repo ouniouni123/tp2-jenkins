@@ -2,7 +2,7 @@ pipeline {
 agent any
 options { timestamps() }
 environment {
-IMAGE = 'zayneeb/monapp'
+IMAGE = 'ouniouni/monapp'
 TAG = "build-${env.BUILD_NUMBER}"
 }
   stages {
@@ -29,8 +29,7 @@ docker rm -f monapp_test
 stage('Push (Docker Hub)') {
 steps {
 withCredentials([usernamePassword(credentialsId: 'dockerhub-creds',
-usernameVariable: 'USER',
-passwordVariable: 'PASS')]) {
+usernameVariable: 'USER',passwordVariable: 'PASS')]) {
 bat """
 echo %PASS% | docker login -u %USER% --password-stdin
 docker tag %IMAGE%:%TAG% %IMAGE%:latest
